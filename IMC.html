@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de IMC</h1>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" placeholder="Introduce tu nombre">
+
+        <label for="peso">Peso (kg):</label>
+        <input type="number" id="peso" placeholder="Introduce tu peso en kg">
+
+        <label for="altura">Altura (m o cm):</label>
+        <input type="text" id="altura" placeholder="Introduce tu altura en m o cm">
+
+        <button onclick="calcularIMC()">Calcular IMC</button>
+        <button onclick="capturarResultado()" class="captura" id="botonCaptura" disabled>Capturar Tabla y Resultado</button>
+        <button onclick="reiniciarFormulario()" class="reiniciar">Reiniciar</button>
+
+        <div class="resultado" id="resultado">
+            <p id="resultadoTexto"></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Clasificación</th>
+                        <th>IMC (kg/m²)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="peso-insuficiente" data-clasificacion="Peso insuficiente">
+                        <td>Peso insuficiente</td>
+                        <td>Menos de 18.5</td>
+                    </tr>
+                    <tr class="peso-normal" data-clasificacion="Peso normal">
+                        <td>Peso normal</td>
+                        <td>18.5 – 24.9</td>
+                    </tr>
+                    <tr class="sobrepeso" data-clasificacion="Sobrepeso">
+                        <td>Sobrepeso</td>
+                        <td>25 – 29.9</td>
+                    </tr>
+                    <tr class="obesidad" data-clasificacion="Obesidad">
+                        <td>Obesidad</td>
+                        <td>30 – 39.9</td>
+                    </tr>
+                    <tr class="obesidad-extrema" data-clasificacion="Obesidad extrema">
+                        <td>Obesidad extrema</td>
+                        <td>40 o más</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
